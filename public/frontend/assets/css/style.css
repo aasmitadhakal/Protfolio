@@ -183,7 +183,7 @@ h6 {
 .small-text {
     font-size: 14px;
     font-weight: 700;
-    color: #7483d6;
+    color: #636262;
 }
 .heading-title {
     font-weight: 700;
@@ -309,7 +309,7 @@ form label {
     transition: transform 0.4s ease-in-out;
 }
 .blog-media-wrapper {
-    height: 223px;
+    height: 423px;
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -336,8 +336,44 @@ form label {
 }
 .blog-card:hover .blog-icon {
     color: white;
-    background-color: #b42126;
+    background-color: #7483d6;
 }
 .blog-card:hover img {
     transform: scale(1.2);
+}
+.about-icon {
+    color: #7f7f81;
+    font-size: 2.2rem !important;
+    font-weight: 400;
+}
+.experience-icon {
+    color: #252525;
+    font-size: 1.5rem !important;
+    font-weight: 400;
+}
+.experience-box {
+    height: 300px;
+}
+.demo-btn {
+    border: none;
+}
+.demo-btn {
+    background-color: #ffffff;
+    border: 1px solid #858585;
+    border-radius: 30px;
+    padding: 10px;
+    margin-right: 20px;
+}
+a {
+    text-decoration: none;
+    color: #56575a;
+}
+h4 {
+    color: #6e6b6b;
+}
+.social-icon {
+    color: white;
+    background-color: #7483d6;
+    padding: 8px;
+    border-radius: 50%;
 }
