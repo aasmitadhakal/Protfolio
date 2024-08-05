@@ -44,15 +44,16 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#gallery" onclick="showSection('gallery')">Testimonial</a>
+                                <a class="nav-link" href="#gallery" onclick="showSection('gallery')">Skill</a>
                             </li>
                         </ul>
-                        <form class="d-flex">
-                            <button class="darksoul-hover-fill-button3" type="button">
-                                <div class="color-fill-3"></div>
-                                <p>Contact Us</p>
-                            </button>
-                        </form>
+                        {{-- <form class="d-flex"> --}}
+                        <a class="darksoul-hover-fill-button3" type="button" href="#contact"
+                            onclick="showSection('contact')">
+                            <div class="color-fill-3"></div>
+                            <p>Contact Us</p>
+                        </a>
+                        {{-- </form> --}}
                     </div>
                 </div>
             </nav>
@@ -98,7 +99,7 @@
                     <div class="img-wrapper rounded-3">
                         <span>
                             <img class="photo-box shadow-sm pb-lg-0 pb-3 rounded"
-                                src="{{ asset('frontend/assets/images/img3.jpg') }}" /></span>
+                                src="{{ asset('frontend/assets/images/img13.jpg') }}" /></span>
                     </div>
                 </div>
                 <div class="col-md-8 d-flex justify-center align-items-center">
@@ -534,7 +535,7 @@
         </div>
     </section> --}}
     {{-- contact us section --}}
-    <section class="py-5">
+    <section class="py-5" id="contact">
         <div class="container">
             <div class="heading-part-css text-center mb-4">
                 <h4 class="small-text">Get In Touch</h4>
@@ -621,13 +622,9 @@
             </div>
     </section>
     {{-- for blog --}}
-
 </body>
 
 </html>
-
-
-
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const header = document.querySelector("#header");
