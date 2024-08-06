@@ -1,7 +1,13 @@
 <?php
 
+use App\Http\Controllers\admin\ContactController;
 use App\Http\Controllers\admin\ExperienceController;
+use App\Http\Controllers\admin\ProjectController;
+use App\Http\Controllers\admin\SettingController as AdminSettingController;
+// use App\Http\Controllers\admin\SkillController as AdminSkillController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\admin\SkillController;
+use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -24,6 +30,11 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     //     return view('admin.Experience.create');
     // });
     Route::resource("experience", ExperienceController::class);
+    Route::resource("project", ProjectController::class);
+    Route::resource("skill", SkillController::class);
+    Route::resource("contact", ContactController::class);
+    Route::get('setting', [AdminSettingController::class, 'edit'])->name('admin.setting.index');
+    Route::post('setting', [AdminSettingController::class, 'update'])->name('admin.setting.update');
 });
 
 require __DIR__ . '/auth.php';

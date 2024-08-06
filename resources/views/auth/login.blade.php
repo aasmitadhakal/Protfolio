@@ -56,14 +56,15 @@
 
                         {{-- <img src="{{ $settings['site_main_logo'] ? asset($settings['site_main_logo']) : 'Flyeast Nepal' }}"
                         width="200px" alt="Flyeast Nepal Logo"> --}}
-                        <img src="{{ asset('admin/assets/img/avatars/logo.jpg') }}" width="200px" alt="">
+                        <img src="{{ asset('frontend/assets/images/img13.jpg') }}" width="100px" class="rounded"
+                            alt="">
 
                     </span>
                     {{-- <span class="app-brand-text demo text-body fw-bolder">Paradise</span> --}}
                 </a>
             </div>
             <!-- /Logo -->
-            <h4 class="mb-2">Welcome to Fly East Nepal!</h4>
+            <h4 class="mb-2">Welcome to Reshma Portfolio!</h4>
             <p class="mb-4">Please sign-in to your account</p>
 
             <form method="POST" action="{{ route('login') }}">

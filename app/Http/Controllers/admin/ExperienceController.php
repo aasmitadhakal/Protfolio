@@ -41,4 +41,9 @@ class ExperienceController extends Controller
         // Return the view with the experience data
         // return view('admin.Experiences.show', compact('experience'));
     }
+    public function destroy(Experience $experience)
+    {
+        $experience->delete();
+        return redirect()->route("experience.index")->with("sucess", "Experience deleted sucessfully");
+    }
 }

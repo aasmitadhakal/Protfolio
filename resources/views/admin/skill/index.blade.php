@@ -2,43 +2,41 @@
 @section('content')
     <div class="card mx-5 my-3">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <h5 class="mb-0">Experience </h5>
+            <h5 class="mb-0">skill </h5>
             <small class="text-muted float-end">
-                <a href="{{ route('experience.create') }}" class="btn btn-primary"><i class="bx bx-plus"></i>
+                <a href="{{ route('skill.create') }}" class="btn btn-primary"><i class="bx bx-plus"></i>
                     Create</a>
             </small>
         </div>
-        @if (!$experience->isEmpty())
+        @if (!$skill->isEmpty())
             <div class="card-body">
                 <div class="table-responsive text-nowrap">
                     <table class="table" id="dtable">
                         <thead>
                             <tr>
                                 <th>SN</th>
-                                <th>Image</th>
                                 <th>Title</th>
-                                <th>Level</th>
+                                <th>Short_Description</th>
+                                <th>Image</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody class="table-border-bottom-0">
-
-                            @foreach ($experience as $key => $experience)
+                            @foreach ($skill as $key => $skill)
                                 <tr>
-                                    <td>{{ $experience->id }}</td>
+                                    <td>{{ $skill->id }}</td>
 
-
-                                    <td>{{ $experience->name }}</td>
-                                    <td>{{ $experience->title }}</td>
-                                    <td>{{ $experience->level }}</td>
-                                    <td>{{ $experience->order }}</td>
+                                    <td>{{ $skill->title }}</td>
+                                    <td>{{ $skill->short_description }}</td>
+                                    <td><img src="{{ asset($skill->image) }}" height="100" alt=""></td>
+                                    {{-- <td>{{ $skill->order }}</td> --}}
 
                                     <td class="">
-                                        <a href="{{ route('experience.edit', $experience->id) }}" type="button"
+                                        <a href="{{ route('skill.edit', $skill->id) }}" type="button"
                                             class="btn btn-icon btn-primary">
                                             <i class="tf-icons bx bx-edit text-white"></i>
                                         </a>
-                                        <form action="{{ route('experience.destroy', $experience->id) }}" method="post"
+                                        <form action="{{ route('skill.destroy', $skill->id) }}" method="post"
                                             class="d-inline">
                                             @csrf
                                             @method('DELETE')

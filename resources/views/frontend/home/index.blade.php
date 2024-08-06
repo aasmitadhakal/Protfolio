@@ -559,7 +559,7 @@
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <form class="bg-white contact-form shadow p-5" action="" method="post" id="contactForm">
+                    <form action="{{route('contact.store')}}" class="bg-white contact-form shadow p-5" action="" method="post" id="contactForm">
                         @csrf
                         <div class="form-group form-group-flex">
                             <div class="form-group-half me-2 mb-3">

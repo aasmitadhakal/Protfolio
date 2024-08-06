@@ -2,43 +2,46 @@
 @section('content')
     <div class="card mx-5 my-3">
         <div class="card-header d-flex justify-content-between align-items-center">
-            <h5 class="mb-0">Experience </h5>
+            <h5 class="mb-0">contact </h5>
             <small class="text-muted float-end">
-                <a href="{{ route('experience.create') }}" class="btn btn-primary"><i class="bx bx-plus"></i>
+                <a href="{{ route('contact.create') }}" class="btn btn-primary"><i class="bx bx-plus"></i>
                     Create</a>
             </small>
         </div>
-        @if (!$experience->isEmpty())
+        @if (!$contact->isEmpty())
             <div class="card-body">
                 <div class="table-responsive text-nowrap">
                     <table class="table" id="dtable">
                         <thead>
                             <tr>
                                 <th>SN</th>
-                                <th>Image</th>
-                                <th>Title</th>
-                                <th>Level</th>
+                                <th>Name</th>
+                                <th>Adress</th>
+                                <th>Email</th>
+                                <th>Phone Number</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody class="table-border-bottom-0">
 
-                            @foreach ($experience as $key => $experience)
+                            @foreach ($contact as $key => $contact)
                                 <tr>
-                                    <td>{{ $experience->id }}</td>
-
-
-                                    <td>{{ $experience->name }}</td>
-                                    <td>{{ $experience->title }}</td>
-                                    <td>{{ $experience->level }}</td>
-                                    <td>{{ $experience->order }}</td>
-
+                                    <td>{{ $contact->id }}</td>
+                                    <td>{{ $contact->name }}</td>
+                                    <td>{{ $contact->address }}</td>
+                                    <td>{{ $contact->email }}</td>
+                                    <td>{{ $contact->phone }}</td>
+                                    {{-- <td>{{ $contact->order }}</td> --}}
                                     <td class="">
-                                        <a href="{{ route('experience.edit', $experience->id) }}" type="button"
+                                        <a href="{{ route('contact.show', $contact) }}" type="button"
+                                            class="btn btn-icon btn-info">
+                                            <i class="tf-icons bx bx-show-alt text-white"></i>
+                                        </a>
+                                        {{-- <a href="{{ route('contact.edit', $contact->id) }}" type="button"
                                             class="btn btn-icon btn-primary">
                                             <i class="tf-icons bx bx-edit text-white"></i>
-                                        </a>
-                                        <form action="{{ route('experience.destroy', $experience->id) }}" method="post"
+                                        </a> --}}
+                                        <form action="{{ route('contact.destroy', $contact->id) }}" method="post"
                                             class="d-inline">
                                             @csrf
                                             @method('DELETE')
