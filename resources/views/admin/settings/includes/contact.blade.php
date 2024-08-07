@@ -36,8 +36,14 @@
                 <p class="text-danger">{{ $message }}</p>
             @enderror
         </div>
-
-
+        <div class="mb-4 col-md-6">
+            <label for="contact_phone" class="form-label">Slider Title</label>
+            <input type="text" class="form-control" id="contact_phone" name="contact_phone"
+                placeholder="Contact phone" value="{{ $settings['contact_phone'] }}" />
+            @error('contact_phone')
+                <p class="text-danger">{{ $message }}</p>
+            @enderror
+        </div>
 
     </div>
 </div>

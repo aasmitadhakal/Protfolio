@@ -13,6 +13,6 @@
 
     {{-- Side Nav --}}
     <button class="nav-link text-start" id="v-pills-contact-tab" data-bs-toggle="pill" data-bs-target="#v-pills-contact"
-        type="button" role="tab" aria-controls="v-pills-contact" aria-selected="false">Contact Us</button>
+        type="button" role="tab" aria-controls="v-pills-contact" aria-selected="false">Home Page Title</button>
 
 </div>

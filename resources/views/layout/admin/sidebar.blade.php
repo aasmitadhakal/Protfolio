@@ -62,34 +62,7 @@
                 <div data-i18n="Basic"> Skill</div>
             </a>
         </li>
-        {{-- for testimonial --}}
-        <li class="menu-item">
-            <a href="" class="menu-link">
-                <i class='menu-icon bx bx-message-dots'></i>
-                <div data-i18n="Basic">Testimonial</div>
-            </a>
-        </li>
-        {{-- for packages --}}
-        <li class="menu-item">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Packages</div>
-            </a>
 
-            <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="layouts-without-menu.html" class="menu-link">
-                        <div data-i18n="Without menu">Trekking</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="layouts-without-navbar.html" class="menu-link">
-                        <div data-i18n="Without navbar">Packages</div>
-                    </a>
-                </li>
-
-            </ul>
-        </li>
         <!-- global setting -->
         <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
