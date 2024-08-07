@@ -17,7 +17,7 @@
     <ul class="menu-inner py-1">
 
         <li class="menu-item">
-            <a href="" class="menu-link">
+            <a href="{{ route('dashboard') }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Basic">Dashboard</div>
             </a>
@@ -31,7 +31,7 @@
 
             <ul class="menu-sub">
                 <li class="menu-item">
-                    <a href="" class="menu-link">
+                    <a href="{{ route('contact.index') }}" class="menu-link">
                         <div data-i18n="Without menu">Inquries</div>
                     </a>
                 </li>
@@ -76,16 +76,7 @@
                         <div data-i18n="Without menu">Global Setting</div>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="layouts-without-navbar.html" class="menu-link">
-                        <div data-i18n="Without navbar">Contact Inquiries</div>
-                    </a>
-                </li>
-                <li class="menu-item">
-                    <a href="layouts-container.html" class="menu-link">
-                        <div data-i18n="Container">Booking</div>
-                    </a>
-                </li>
+
             </ul>
         </li>
     </ul>

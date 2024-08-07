@@ -34,7 +34,7 @@ class ContactController extends Controller
         //
         $input = $request->all();
         $contact = Contact::create($input);
-        return redirect()->route("contact.index")->with("success", "contact added successfully.");
+        return redirect()->back()->with("success", "contact added successfully.");
     }
 
     /**

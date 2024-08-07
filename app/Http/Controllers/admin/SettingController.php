@@ -59,7 +59,7 @@ class SettingController extends Controller
 
         $siteSetting = $request->all();
 
-        $settingmedias = ['site_main_logo', 'site_fav_icon', 'site_footer_logo', 'site_contact_image', "counter_happycustomers_image", "counter_packages_image", "counter_bookings_image", "counter_treakings_image"];
+        $settingmedias = ['site_main_logo', 'site_fav_icon', 'site_footer_logo', 'banner_image', 'about_image'];
 
         foreach ($settingmedias as $media) {
             ${$media} = updatesettingmedia($request, $media, $media);

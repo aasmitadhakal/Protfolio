@@ -4,14 +4,14 @@
         <div class="card-header d-flex justify-content-between align-items-center">
             <h5 class="mb-0">Experience</h5>
             <small class="text-muted float-end">
-                <a href="" class="btn btn-primary">
+                <a href="{{route('experience.index')}}" class="btn btn-primary">
                     <i class='bx bx-left-arrow-alt'></i>
                     Back
                 </a>
             </small>
         </div>
         <div class="card-body">
-            <form action="{{ route('experience.update', $experience->id) }}" enctype="multipart/form-data">
+            <form action="{{ route('experience.update', $experience->id) }}" enctype="multipart/form-data" method="post">
                 @csrf
                 @method('PUT')
                 <div class="row justify-content-center g-4">
@@ -99,7 +99,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary mt-4 d-flex align-items-center justify-content-between"><i
                         class="bx bx-plus"></i>
-                    Create
+                    Update
                 </button>
             </form>
         </div>

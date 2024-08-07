@@ -4,7 +4,7 @@
         <div class="card-header d-flex justify-content-between align-items-center">
             <h5 class="mb-0">Project</h5>
             <small class="text-muted float-end">
-                <a href="" class="btn btn-primary">
+                <a href="{{ route('skill.index') }}" class="btn btn-primary">
                     <i class='bx bx-left-arrow-alt'></i>
                     Back
                 </a>
@@ -102,7 +102,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary mt-4 d-flex align-items-center justify-content-between"><i
                         class="bx bx-plus"></i>
-                    Create
+                    Update
                 </button>
             </form>
         </div>

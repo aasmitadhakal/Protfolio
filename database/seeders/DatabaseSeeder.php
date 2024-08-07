@@ -7,6 +7,7 @@ use App\Models\Settings;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -65,7 +66,8 @@ class DatabaseSeeder extends Seeder
             ['experience', '+2year'],
             ['experience_field', 'Frontend Development'],
             ['education', 'Bachelor in Computer Science'],
-            ['faculty', 'CSIT']
+            ['faculty', 'CSIT'],
+            ['about_me_description', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis aut et veritatis incidunt labore fugiat veniam error itaque delectus, quam illum odit! Maiores ipsam maxime dolor ad ipsum ratione corrupti!\ Lorem ipsum dolor sit amet co Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis aut et veritatis incidunt labore fugiat veniam error itaque delectus, quam illum odit! Maiores ipsam maxime dolor ad ipsum ratione corrupti!\ Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis aut et veritatis incidunt labore fugiat veniam error itaque delectus, quam illum odit! Maiores ipsam maxime dolor ad ipsum ratione corrupti!']
         ];
 
         if (count($items)) {
@@ -78,5 +80,10 @@ class DatabaseSeeder extends Seeder
                 ]);
             }
         }
+        User::create([
+            'name' => 'Super Admin',
+            'email' => 'dhakalr78@gmail.com',
+            'password' => Hash::make('12345678'),
+        ]);
     }
 }

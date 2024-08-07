@@ -44,7 +44,7 @@ class ProjectController extends Controller
             $input["image"] = $imageName;
         }
         $project = Project::create($input);
-        return redirect()->route("skill.index")->with("success", "Project added successfully.");
+        return redirect()->route("project.index")->with("success", "Project added successfully.");
     }
 
     /**

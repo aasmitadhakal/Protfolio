@@ -70,6 +70,13 @@ h6 {
     -webkit-line-clamp: 4; /* Number of lines to show */
     line-clamp: 4; /* For future-proofing as it becomes standardized */
 }
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 3; /* Number of lines to show */
+    line-clamp: 3; /* For future-proofing as it becomes standardized */
+}
 /* .line-clamp-3 {
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -90,7 +97,7 @@ h6 {
 .darksoul-hover-fill-button3 {
     margin: auto;
     display: flex;
-    width: 150px;
+    width: 130px;
     height: 40px;
     color: rgb(116, 131, 214);
     border-radius: 5px;
@@ -105,14 +112,14 @@ h6 {
 .color-fill-3 {
     position: absolute;
     margin-left: -7px;
-    width: 150px;
+    width: 130px;
     height: 1px;
     background-color: rgb(116, 131, 214);
     visibility: hidden;
 }
 .darksoul-hover-fill-button3:hover .color-fill-3 {
     visibility: visible;
-    width: 156px;
+    width: 136px;
     height: 50px;
     border-radius: 5px;
     transition: all 0.5s;
@@ -148,7 +155,13 @@ h6 {
     background-color: #f2f9fc;
 }
 .img-container img {
-    height: 500px;
+    height: 200px;
+    width: 100%;
+}
+@media (min-width: 557px) {
+    .img-container img {
+        height: 500px;
+    }
 }
 .banner-section {
     padding-top: 150px;
@@ -217,7 +230,7 @@ width: 60px; */
 .portfolio-img img {
     height: 330px;
     overflow: hidden;
-    width: 900px;
+    width: 100%;
     border-radius: 10px;
     /* width: 300px; */
 }
@@ -352,7 +365,12 @@ form label {
     font-weight: 400;
 }
 .experience-box {
-    height: 300px;
+    height: 500px;
+}
+@media (min-width: 996px) {
+    .experience-box {
+        height: 300px;
+    }
 }
 .demo-btn {
     border: none;
@@ -376,4 +394,26 @@ h4 {
     background-color: #7483d6;
     padding: 8px;
     border-radius: 50%;
+}
+.navbar-toggler {
+    border: none !important;
+}
+.header-menu-icon {
+    color: #7483d6 !important;
+    font-size: 30px;
+}
+.navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0;
+    box-shadow: none !important ;
+}
+
+@media (min-width: 1200px) {
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+        max-width: 1186px !important;
+    }
 }

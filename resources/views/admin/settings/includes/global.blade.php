@@ -5,7 +5,7 @@
                 <label for="site_logo">Site Main Logo</label>
                 <div class="custom-file">
                     <input type="file" name="site_main_logo" class="mainlogo" id="site_main_logo"
-                        data-show-remove="false" data-default-file="{{ $settings['site_main_logo'] }}">
+                        data-show-remove="false" data-default-file="{{ $settings['banner_image'] }}">
                     <img src="" alt="">
                 </div>
             </div>
@@ -31,19 +31,6 @@
                 </div>
             </div>
         </div>
-
-        <div class="col-md-6">
-            <div class="form-group mb-3">
-                <label for="site_contact_image">Site Contact Image</label>
-                <div class="custom-file">
-                    <input type="file" name="site_contact_image" class="Contactlogo dropify" id="site_contact_image"
-                        data-show-remove="false" data-default-file="{{ $settings['site_contact_image'] }}">
-                    <img src="" alt="">
-                </div>
-            </div>
-        </div>
-
-
         <div class="col-md-12">
             <div class="form-group mb-3">
                 <label for="site_information">Site Information</label>
@@ -72,13 +59,7 @@
                     class="form-control br-8" placeholder="Enter Location">
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="form-group mb-3">
-                <label for="site_location_url">Location Url</label>
-                <input type="text" name="site_location_url" value="{{ $settings['site_location_url'] }}"
-                    class="form-control br-8" placeholder="Enter Location Url">
-            </div>
-        </div>
+
         <div class="col-md-6">
             <div class="form-group mb-3">
                 <label for="site_map">Map</label>
@@ -89,8 +70,8 @@
         <div class="col-md-6">
             <div class="form-group mb-3">
                 <label for="site_mail">Mail</label>
-                <input type="text" name="site_mail" value="{{ $settings['site_mail'] }}"
-                    class="form-control br-8" placeholder="Enter Site Mail ">
+                <input type="text" name="site_mail" value="{{ $settings['site_mail'] }}" class="form-control br-8"
+                    placeholder="Enter Site Mail ">
             </div>
         </div>
         <div class="col-md-6">
@@ -100,14 +81,5 @@
                     placeholder="Enter Site Url ">
             </div>
         </div>
-
-
-        <div class="col-md-12">
-            <div class="form-group mb-3">
-                <label for="site_copyright">Site Copyright</label>
-                <textarea name="site_copyright" rows="4" class="form-control br-8" placeholder="Enter Site Information">{{ $settings['site_copyright'] }}</textarea>
-            </div>
-        </div>
-
     </div>
 </div>
