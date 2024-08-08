@@ -16,12 +16,14 @@ return new class extends Migration
             $table->string("name")->nullable();
             $table->string("level")->nullable();
             $table->string("title")->nullable();
+            $table->string("date_from")->nullable();
+            $table->string("date_to")->nullable();
+            $table->mediumText("short_description")->nullable();
             $table->string("icon")->nullable();
             $table->string("type")->nullable();
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */

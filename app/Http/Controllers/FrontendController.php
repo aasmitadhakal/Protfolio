@@ -14,8 +14,8 @@ class FrontendController extends Controller
     {
         $project = Project::all();
         $skill = Skill::all();
-        $frontend = Experience::where('type', 'frontend')->get();
-        $backend = Experience::where('type', 'backend')->get();
-        return view('frontend.home.index', compact('project', 'skill', 'frontend', 'backend'));
+        $education = Experience::where('type', 'education')->get();
+        $experiencedata = Experience::where('type', 'experience')->get();
+        return view('frontend.home.index', compact('project', 'skill', 'education', 'experiencedata'));
     }
 }

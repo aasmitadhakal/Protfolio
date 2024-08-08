@@ -38,7 +38,7 @@
                                 </div>
 
                                 <div class="mb-4">
-                                    <label for="description" class="form-label">description</label>
+                                    <label for="description" class="form-label">Progress</label>
                                     <input type="text" class="form-control" id="description" name="description"
                                         placeholder="description" value="{{ old('description') }}" />
                                     @error('description')

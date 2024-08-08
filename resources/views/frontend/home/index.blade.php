@@ -132,8 +132,56 @@
             </div>
         </div>
     </section>
+    {{-- experience & education --}}
+    <div class="containers page-bg-color" id="experience">
+
+        <main class="rows">
+
+            <!--   *******  Education Section Starts  *******   -->
+
+            <section class="cols">
+
+                <header class="title">
+                    <h2>EDUCATION</h2>
+                </header>
+
+                <div class="contents">
+                    @foreach ($education as $item)
+                        <div class="box">
+                            <h4>{{ $item->date_from }} - {{ $item->date_to }}</h4>
+                            <h3>{{ $item->title }}</h3>
+                            <p>{{ $item->short_description }}</p>
+                        </div>
+                    @endforeach
+                </div>
+            </section>
+
+            <!--   *******  Education Section Ends  *******   -->
+
+            <!--   *******  Experience Section Starts  *******  -->
+
+            <section class="cols">
+
+                <header class="title">
+                    <h2>EXPERIENCE</h2>
+                </header>
+
+                <div class="contents">
+                    @foreach ($experiencedata as $item)
+                        <div class="box">
+                            <h4>{{ $item->date_from }} - {{ $item->date_to }}</h4>
+                            <h3>{{ $item->title }}</h3>
+                            <p>{{ $item->short_description }}</p>
+                        </div>
+                    @endforeach
+                </div>
+            </section>
+
+            <!--   *******  Experience Section Ends   *******  -->
+        </main>
+    </div>
     {{-- Experience --}}
-    <section id="experience">
+    {{-- <section id="experience">
         <div class="container">
             <div class="heading-part-css text-center mb-2">
                 <h4 class="small-text">{{ $settings['experience_slogan'] }}</h4>
@@ -144,7 +192,7 @@
                     <div class="border rounded experience-box p-4">
                         <h3 class="text-center py-2">Frontend Development</h3>
                         <div class="row">
-                            @foreach ($frontend as $experience)
+                            @foreach ($education as $experience)
                                 <div class="col-lg-6 d-flex justify-items-center justify-content-center">
                                     <div class="d-flex gap-2">
                                         <i class="ri-verified-badge-fill py-2 experience-icon"></i>
@@ -162,8 +210,7 @@
                     <div class="border rounded p-4 experience-box">
                         <h3 class="text-center py-2">Backend Development</h3>
                         <div class="row">
-
-                            @foreach ($backend as $experience)
+                            @foreach ($experiencedata as $experience)
                                 <div class="col-lg-6 d-flex justify-items-center justify-content-center">
                                     <div class="d-flex gap-2">
                                         <i class="ri-verified-badge-fill py-2 experience-icon"></i>
@@ -174,12 +221,13 @@
                                     </div>
                                 </div>
                             @endforeach
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     {{-- portfoili --}}
     {{-- @if ($project->isNotEmpty())
         <section class="py-5  trekking-section " id="protfolio">
@@ -264,7 +312,7 @@
 
     @endif
     {{-- skills part --}}
-    @if ($project->isNotEmpty())
+    {{-- @if ($skill->isNotEmpty())
         <section class="py-5"id="gallery">
             <div class="container">
                 <div class="heading-part-css text-center mb-4">
@@ -273,7 +321,7 @@
                 </div>
                 <div class="row">
                     @foreach ($skill as $item)
-                        {{-- card 1 --}}
+
                         <div class="col-lg-4 col-md-6 position-relative ">
                             <div class="service-card   shadow p-4 ltr-effect my-2">
                                 <div class="service-img">
@@ -295,7 +343,7 @@
                 </div>
             </div>
         </section>
-    @endif
+    @endif --}}
     {{-- portfolio part --}}
 
     {{-- <section>
@@ -313,115 +361,32 @@
         </div>
     </section> --}}
     {{-- technologies --}}
-    {{-- <section class="py-5">
-        <div class="container">
-            <div class="heading-part-css mb-4">
-                <h4 class="small-text">Skill</h4>
-                <h1 class="heading-title">Technologies </h1>
-            </div>
-            <div class="col-md-8 py-2">
-                <div class="d-flex justify-content-between pb-2">
-                    <div class="small-text-gray">Html</div>
-                    <div>Advanced</div>
+    @if ($skill->isNotEmpty())
+        <section class="py-5 page-bg-color" id="gallery">
+            <div class="container">
+                <div class="heading-part-css mb-4 text-center">
+                    <h4 class="small-text">Skill</h4>
+                    <h1 class="heading-title">Technologies </h1>
                 </div>
+                <div class="row">
+                    @foreach ($skill as $item)
+                        <div class="col-md-6 py-2">
+                            <div class="d-flex justify-content-between pb-2">
+                                <div class="small-text-gray">{{ $item->title }}</div>
+                                <div>{{ $item->short_description }}</div>
+                            </div>
 
-                <div class="progress">
-                    <div class="progress-bar bg-info " role="progressbar" style="width: 95%" aria-valuenow="50"
-                        aria-valuemin="0" aria-valuemax="50"></div>
-                </div>
-            </div>
-
-            <div class="col-md-8 py-2">
-                <div class="d-flex justify-content-between pb-2">
-                    <div class="small-text-gray">css</div>
-                    <div>Advanced</div>
-                </div>
-
-                <div class="progress">
-                    <div class="progress-bar bg-info " role="progressbar" style="width: 95%" aria-valuenow="50"
-                        aria-valuemin="0" aria-valuemax="50"></div>
+                            <div class="progress">
+                                <div class="progress-bar bg-info " role="progressbar"
+                                    style="width: {{ $item->description }}%" aria-valuenow="50" aria-valuemin="0"
+                                    aria-valuemax="50"></div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
-            <div class="col-md-8 py-2">
-                <div class="d-flex justify-content-between pb-2">
-                    <div class="small-text-gray">javascript</div>
-                    <div>Regular</div>
-                </div>
-
-                <div class="progress">
-                    <div class="progress-bar bg-info " role="progressbar" style="width: 80%" aria-valuenow="50"
-                        aria-valuemin="0" aria-valuemax="50"></div>
-                </div>
-            </div>
-            <div class="col-md-8 py-2">
-                <div class="d-flex justify-content-between pb-2">
-                    <div class="small-text-gray">React</div>
-                    <div>Regular</div>
-                </div>
-
-                <div class="progress">
-                    <div class="progress-bar bg-info " role="progressbar" style="width: 80%" aria-valuenow="50"
-                        aria-valuemin="0" aria-valuemax="50"></div>
-                </div>
-            </div>
-            <div class="col-md-8 py-2">
-                <div class="d-flex justify-content-between pb-2">
-                    <div class="small-text-gray">Next js</div>
-                    <div>Regular</div>
-                </div>
-
-                <div class="progress">
-                    <div class="progress-bar bg-info " role="progressbar" style="width: 80%" aria-valuenow="50"
-                        aria-valuemin="0" aria-valuemax="50"></div>
-                </div>
-            </div>
-            <div class="col-md-8 py-2">
-                <div class="d-flex justify-content-between pb-2">
-                    <div class="small-text-gray">Laravel</div>
-                    <div>Regular</div>
-                </div>
-
-                <div class="progress">
-                    <div class="progress-bar bg-info " role="progressbar" style="width: 80%" aria-valuenow="50"
-                        aria-valuemin="0" aria-valuemax="50"></div>
-                </div>
-            </div>
-            <div class="col-md-8 py-2">
-                <div class="d-flex justify-content-between pb-2">
-                    <div class="small-text-gray">Bootstrap</div>
-                    <div>Regular</div>
-                </div>
-
-                <div class="progress">
-                    <div class="progress-bar bg-info " role="progressbar" style="width: 80%" aria-valuenow="50"
-                        aria-valuemin="0" aria-valuemax="50"></div>
-                </div>
-            </div>
-            <div class="col-md-8 py-2">
-                <div class="d-flex justify-content-between pb-2">
-                    <div class="small-text-gray">Tailwind css</div>
-                    <div>Regular</div>
-                </div>
-
-                <div class="progress">
-                    <div class="progress-bar bg-info " role="progressbar" style="width: 80%" aria-valuenow="50"
-                        aria-valuemin="0" aria-valuemax="50"></div>
-                </div>
-            </div>
-            <div class="col-md-8 py-2">
-                <div class="d-flex justify-content-between pb-2">
-                    <div class="small-text-gray">Git</div>
-                    <div>Regular</div>
-                </div>
-
-                <div class="progress">
-                    <div class="progress-bar bg-info " role="progressbar" style="width: 80%" aria-valuenow="50"
-                        aria-valuemin="0" aria-valuemax="50"></div>
-                </div>
-            </div>
-
-        </div>
-    </section> --}}
+        </section>
+    @endif
     {{-- contact us section --}}
     <section class="py-5" id="contact">
         <div class="container">
@@ -429,26 +394,13 @@
                 <h4 class="small-text">{{ $settings['contact_slogan'] }}</h4>
                 <h1 class="heading-title">With Me</h1>
             </div>
-            <div class="row">
-                <div class="col-lg-4 d-flex justify-content-center align-item-center">
-                    <div class="py-5">
-                        <div class="d-flex align-items-center mb-2 gap-2">
-                            <i class="ri-map-pin-line contact-icon ri-5x"></i>
-                            <p class="bodypart-css mb-2">{{ $settings['site_location'] }}</p>
-                        </div>
-                        <div class="d-flex align-items-center   gap-2">
-                            <i class="ri-mail-line contact-icon ri-5x"></i>
-                            <p class="bodypart-css mb-2">{{ $settings['site_email'] }}</p>
-                        </div>
-                        <div class="d-flex align-items-center mb-2 gap-2">
-                            <i class="ri-phone-line contact-icon ri-5x"></i>
-                            <p class="bodypart-css mb-2">{{ $settings['site_phone'] }}</p>
-                        </div>
-                    </div>
+            <div class="row shadow p-5 ">
+                <div class="contact-img col-lg-5 d-flex justify-content-center align-item-center px-5">
+                    <img src="{{ asset('frontend/assets/images/contact.jpg') }}" alt="">
                 </div>
-                <div class="col-lg-8">
-                    <form action="{{ route('contact.store') }}" class="bg-white contact-form shadow p-5"
-                        method="post" id="contactForm">
+                <div class="col-lg-7">
+                    <form action="{{ route('contact.store') }}" class="bg-white contact-form " method="post"
+                        id="contactForm">
                         @csrf
                         <div class="form-group form-group-flex">
                             <div class="form-group-half me-2 mb-3">
@@ -479,7 +431,7 @@
                         <div class="d-flex justify-start">
                             <button class="darksoul-hover-fill-button3" type="submit">
                                 <div class="color-fill-3"></div>
-                                <p>Contact Us</p>
+                                <p>Contact Me</p>
                             </button>
                         </div>
                     </form>
@@ -487,28 +439,67 @@
             </div>
         </div>
     </section>
+    {{-- @include('frontend.home.fotter') --}}
     {{-- fotter --}}
-    <section>
-        <div class="fotter py-5 page-bg-color">
+    <section class="py-5 page-bg-color">*
+        <div class="fotter py-5 ">
             <div class="container mb-4">
                 <div class="row">
-                    <h1 class="text-span">Reshma Dhakal</h1>
-                    <h4>Full Stack Developer</h4>
-                </div>
-                <div class="fotter-section  border-t-2 mt-3 ">
-                    <a href="https://www.facebook.com/"> <i class="ri-facebook-line social-icon"></i></a>
-                    <a href="https://www.instagram.com/"> <i class="ri-instagram-fill social-icon"></i></a>
-                    <a href="https://www.linkedin.com/feed/"> <i class="ri-linkedin-fill social-icon"></i></a>
-                    <a href="https://github.com/aasmitadhakal"> <i class="ri-github-fill social-icon"></i></a>
+                    <div class="col-lg-4">
+                        <h1 class="text-span">Reshma Dhakal</h1>
+                        <h4>Full Stack Developer</h4>
+                        <div class="fotter-section  border-t-2 mt-3 ">
+                            <a href="https://www.facebook.com/"> <i class="ri-facebook-line social-icon"></i></a>
+                            <a href="https://www.instagram.com/"> <i class="ri-instagram-fill social-icon"></i></a>
+                            <a href="https://www.linkedin.com/feed/"> <i class="ri-linkedin-fill social-icon"></i></a>
+                            <a href="https://github.com/aasmitadhakal"> <i class="ri-github-fill social-icon"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3  mt-3">
+                        <h4>Quick Link</h4>
+                        <a class="nav-link active bodypart-css mb-1" aria-current="page" href="#home"
+                            onclick="showSection('aboutme')">About Me</a>
+                        <a class="nav-link active bodypart-css mb-1" aria-current="page" href="#home"
+                            onclick="showSection('home')">Experience</a>
+                        <a class="nav-link active bodypart-css mb-1" aria-current="page" href="#home"
+                            onclick="showSection('skill')">skill</a>
+                        <a class="nav-link mb-1" href="#protfolio" onclick="showSection('protfolio')">Portfolio</a>
+                    </div>
+                    <div class="col-lg-2  mt-3">
+                        <h4>My Skills</h4>
+                        <a class="nav-link active bodypart-css mb-1" aria-current="page">Html</a>
+                        <a class="nav-link active bodypart-css mb-1" aria-current="page">Css</a>
+                        <a class="nav-link active bodypart-css mb-1" aria-current="page">Laravel</a>
+                        <a class="nav-link" href="#protfolio mb-1" onclick="showSection('protfolio')">React</a>
+                    </div>
+
+                    <div class="col-lg-3 d-flex justify-content-top align-item-top">
+                        <div class="">
+                            <h4>Contact Me </h4>
+                            <div class="d-flex align-items-center  gap-2">
+                                <i class="ri-map-pin-line contact-icon ri-5x"></i>
+                                <p class="bodypart-css mb-2">{{ $settings['site_location'] }}</p>
+                            </div>
+                            <div class="d-flex align-items-center   gap-2">
+                                <i class="ri-mail-line contact-icon ri-5x"></i>
+                                <p class="bodypart-css mb-2">{{ $settings['site_email'] }}</p>
+                            </div>
+                            <div class="d-flex align-items-center  gap-2">
+                                <i class="ri-phone-line contact-icon ri-5x"></i>
+                                <p class="bodypart-css mb-2">{{ $settings['site_phone'] }}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
-            <div class="primary-color my-2 mt-2 p-2 border-top  page-bg-color">
+        </div>
+        {{-- <div class="primary-color my-2 mt-2 p-2 border-top  page-bg-color">
                 <div
                     class="d-md-flex text-center justify-content-between justify-content-md-between align-items-center container ">
-                    Made with love
+                    @reshmadhakal . All rights reserved
                 </div>
-            </div>
+            </div> --}}
     </section>
     {{-- for blog --}}
 </body>

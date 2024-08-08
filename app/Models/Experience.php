@@ -14,6 +14,9 @@ class Experience extends Model
         "level",
         "title",
         "icon",
+        "date_from",
+        "date_to",
+        "short_description",
         "type",
 
     ];

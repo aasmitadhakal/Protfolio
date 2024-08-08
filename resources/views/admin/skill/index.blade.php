@@ -17,7 +17,7 @@
                                 <th>SN</th>
                                 <th>Title</th>
                                 <th>Short_Description</th>
-                                <th>Image</th>
+                                <th>Progress</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -28,7 +28,8 @@
 
                                     <td>{{ $skill->title }}</td>
                                     <td>{{ $skill->short_description }}</td>
-                                    <td><img src="{{ asset($skill->image) }}" height="100" alt=""></td>
+                                    <td>{{ $skill->description }}</td>
+                                    {{-- <td><img src="{{ asset($skill->image) }}" height="100" alt=""></td> --}}
                                     {{-- <td>{{ $skill->order }}</td> --}}
 
                                     <td class="">
@@ -40,7 +41,8 @@
                                             class="d-inline">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-icon btn-danger " id="service_blog">
+                                            <button type="submit" class="btn btn-icon btn-danger delete_skill"
+                                                id="delete_skill">
                                                 <i class="tf-icons bx bx-trash text-white"></i>
                                             </button>
                                         </form>
@@ -55,11 +57,11 @@
         @endif
     </div>
 @endsection;
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @section('js')
     <script>
-        $('#delete_service').click(function(e) {
+        $('.delete_skill').click(function(e) {
             e.preventDefault();
-
             Swal.fire({
                 title: "Are you sure?",
                 text: "You won't be able to revert this!",
@@ -73,7 +75,6 @@
                     $(this).closest("form").submit();
                 }
             });
-
         });
     </script>
 @endsection

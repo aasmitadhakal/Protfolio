@@ -4,7 +4,7 @@
         <div class="card-header d-flex justify-content-between align-items-center">
             <h5 class="mb-0">Experience</h5>
             <small class="text-muted float-end">
-                <a href="{{route('experience.index')}}" class="btn btn-primary">
+                <a href="{{ route('experience.index') }}" class="btn btn-primary">
                     <i class='bx bx-left-arrow-alt'></i>
                     Back
                 </a>
@@ -31,6 +31,30 @@
                                     <input type="text" class="form-control" id="title" name="title"
                                         placeholder="title" value="{{ old('title') }}" />
                                     @error('title')
+                                        <p class="text-danger">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div class="mb-4">
+                                    <label for="date_from" class="form-label">date_from</label>
+                                    <input type="text" class="form-control" id="date_from" name="date_from"
+                                        placeholder="date_from" value="{{ old('date_from') }}" />
+                                    @error('date_from')
+                                        <p class="text-danger">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div class="mb-4">
+                                    <label for="date_to" class="form-label">date_to</label>
+                                    <input type="text" class="form-control" id="date_to" name="date_to"
+                                        placeholder="date_to" value="{{ old('date_to') }}" />
+                                    @error('date_to')
+                                        <p class="text-danger">{{ $message }}</p>
+                                    @enderror
+                                </div>
+                                <div class="mb-4">
+                                    <label for="short_description" class="form-label">Short Description</label>
+                                    <textarea class="form-control" id="short_description" name="short_description" placeholder="Short Description"
+                                        rows="4">{{ old('short_description') }}</textarea>
+                                    @error('short_description')
                                         <p class="text-danger">{{ $message }}</p>
                                     @enderror
                                 </div>

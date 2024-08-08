@@ -23,7 +23,9 @@
         href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
         rel="stylesheet" />
 
-    <script src="{{ asset('admin/assets/vendor/libs/jquery/jquery.js') }}"></script>
+    <script src="{{ asset('admin/assets/vendor/libs/jquery/jquery.j') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('admin/assets/vendor/fonts/boxicons.css') }}" />
     <!-- Core CSS -->
 
@@ -39,7 +41,9 @@
     {{-- <script src="{{ asset('admin/assets/js/sweetalert-new.js') }}"></script>
     <script src="{{ asset('admin/assets/js/sweetalert-new.js') }}"></script> --}}
     {{-- Sweetalert --}}
-    <script src="{{ asset('admin/assets/js/sweetalert-new.js') }}"></script>
+    {{-- <script src="{{ asset('admin/assets/js/sweetalert-new.js') }}"></script> --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="{{ asset('admin/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
     <link rel="stylesheet" href="{{ asset('admin/assets/vendor/libs/apex-charts/apex-charts.css') }}" />
@@ -87,7 +91,7 @@
 
 <body>
     <!-- Notification alerts -->
-    {{-- @include('admin.includes.notification') --}}
+    @include('admin.includes.notification')
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">

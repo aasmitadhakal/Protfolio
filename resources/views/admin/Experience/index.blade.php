@@ -17,7 +17,7 @@
                                 <th>SN</th>
                                 <th>Image</th>
                                 <th>Title</th>
-                                <th>Level</th>
+                                <th>Type</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -30,7 +30,7 @@
 
                                     <td>{{ $experience->name }}</td>
                                     <td>{{ $experience->title }}</td>
-                                    <td>{{ $experience->level }}</td>
+                                    <td>{{ $experience->type }}</td>
                                     <td>{{ $experience->order }}</td>
 
                                     <td class="">
